@@ -3,11 +3,9 @@ package main
 import "fmt"
 
 func main() {
-    var name, city string = "Bob", "New York"
-    age, isEmployed := 28, true
+    const pi = 3.14159
+    const language = "Go"
 
-    fmt.Println("Name:", name)
-    fmt.Println("City:", city)
-    fmt.Println("Age:", age)
-    fmt.Println("Is Employed:", isEmployed)
+    fmt.Println("Value of pi:", pi)
+    fmt.Println("Programming Language:", language)
 }
