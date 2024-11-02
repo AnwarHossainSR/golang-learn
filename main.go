@@ -3,9 +3,13 @@ package main
 import "fmt"
 
 func main() {
-    const pi = 3.14159
-    const language = "Go"
+    var name string  // Default is an empty string ""
+    var age int      // Default is 0
+    var salary float64 // Default is 0.0
+    var isStudent bool // Default is false
 
-    fmt.Println("Value of pi:", pi)
-    fmt.Println("Programming Language:", language)
+    fmt.Println("Name:", name)
+    fmt.Println("Age:", age)
+    fmt.Println("Salary:", salary)
+    fmt.Println("Is Student:", isStudent)
 }
