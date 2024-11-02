@@ -2,28 +2,21 @@ package main
 
 import "fmt"
 
-func main() {
-    // If-else statement
-    age := 18
-    if age >= 18 {
-        fmt.Println("Adult")
-    } else {
-        fmt.Println("Minor")
-    }
+// Function with two parameters and a return value
+func add(a int, b int) int {
+    return a + b
+}
 
-    // For loop (Go's only loop structure)
-    sum := 0
-    for i := 1; i <= 5; i++ {
-        sum += i
-    }
+// Function with multiple return values
+func divide(a, b int) (int, int) {
+    return a / b, a % b
+}
+
+func main() {
+    sum := add(3, 4)
     fmt.Println("Sum:", sum)
 
-    // Switch statement
-    day := "Monday"
-    switch day {
-    case "Saturday", "Sunday":
-        fmt.Println("Weekend")
-    default:
-        fmt.Println("Weekday")
-    }
+    quotient, remainder := divide(10, 3)
+    fmt.Println("Quotient:", quotient)
+    fmt.Println("Remainder:", remainder)
 }
