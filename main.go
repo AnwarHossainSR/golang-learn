@@ -1,14 +1,23 @@
 package main
 
-import "fmt"
+import (
+	"errors"
+	"fmt"
+)
 
-// Function with pointer parameter
-func increment(x *int) {
-    *x = *x + 1 // Modify the original value
+// Function returning an error
+func divide(a, b int) (int, error) {
+    if b == 0 {
+        return 0, errors.New("cannot divide by zero")
+    }
+    return a / b, nil
 }
 
 func main() {
-    value := 10
-    increment(&value)
-    fmt.Println("Incremented Value:", value) // Outputs 11
+    result, err := divide(10, 0)
+    if err != nil {
+        fmt.Println("Error:", err)
+    } else {
+        fmt.Println("Result:", result)
+    }
 }
