@@ -3,11 +3,11 @@ package main
 import "fmt"
 
 func main() {
-    name := "Alice"
-    age := 25
-    isStudent := true
+    var name, city string = "Bob", "New York"
+    age, isEmployed := 28, true
 
     fmt.Println("Name:", name)
+    fmt.Println("City:", city)
     fmt.Println("Age:", age)
-    fmt.Println("Is Student:", isStudent)
+    fmt.Println("Is Employed:", isEmployed)
 }
