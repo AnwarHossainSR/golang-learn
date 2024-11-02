@@ -1,22 +1,27 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
-// Interface definition
-type Greeter interface {
-    greet() string
+func printNumbers() {
+    for i := 1; i <= 5; i++ {
+        fmt.Println(i)
+        time.Sleep(100 * time.Millisecond)
+    }
 }
 
-// Struct implementing Greeter
-type Person struct {
-    name string
-}
-
-func (p Person) greet() string {
-    return "Hello, " + p.name
+func printLetters() {
+    for ch := 'a'; ch <= 'e'; ch++ {
+        fmt.Println(string(ch))
+        time.Sleep(100 * time.Millisecond)
+    }
 }
 
 func main() {
-    var greeter Greeter = Person{name: "Bob"}
-    fmt.Println(greeter.greet()) // Outputs "Hello, Bob"
+    go printNumbers() // Run in a separate goroutine
+    go printLetters() // Run in a separate goroutine
+
+    time.Sleep(1 * time.Second) // Wait for goroutines to finish
 }
