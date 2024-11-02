@@ -2,18 +2,21 @@ package main
 
 import "fmt"
 
-// Struct definition
-type Person struct {
-    name string
-    age  int
+// Interface definition
+type Greeter interface {
+    greet() string
 }
 
-// Method for the Person struct
-func (p *Person) greet() string {
+// Struct implementing Greeter
+type Person struct {
+    name string
+}
+
+func (p Person) greet() string {
     return "Hello, " + p.name
 }
 
 func main() {
-    person := Person{name: "Alice", age: 25}
-    fmt.Println(person.greet()) // Outputs "Hello, Alice"
+    var greeter Greeter = Person{name: "Bob"}
+    fmt.Println(greeter.greet()) // Outputs "Hello, Bob"
 }
